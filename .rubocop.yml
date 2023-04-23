@@ -1,0 +1,20 @@
+require: rubocop-rails
+
+Style/Documentation:
+  Enabled: false
+
+Layout/BlockAlignment:
+  Exclude:
+    - spec/**/*.rb
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Lint/UriEscapeUnescape:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true

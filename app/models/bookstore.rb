@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class Bookstore < ApplicationRecord
-  validates_presence_of :name, :location
+  validates :name, :location, presence: true
   has_many :BookstoreBook
 end
