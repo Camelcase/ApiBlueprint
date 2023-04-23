@@ -3,9 +3,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show update destroy]
 
-  def index = json_response(Book.all)
+  def index = json_response(current_user.books.all)
 
-  def create = json_response(Book.create!(book_params))
+  def create = json_response(current_user.books.create!(book_params))
 
   def show = json_response(@book)
 
@@ -23,5 +23,5 @@ class BooksController < ApplicationController
 
   def book_params = params.permit(:title, :author)
 
-  def set_book = @book = Book.find(params[:id])
+  def set_book = @book = current_user.books.find(params[:id])
 end

@@ -4,12 +4,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   Rails.application.routes.draw do
-    # namespace :api, defaults: { format: :json } do
-    # namespace :v1 do
-    #  resources :books
-    #  resources :bookstores
-    # end
-    # end
+    post 'auth/login', to: 'authentication#authenticate'
+    post 'signup', to: 'users#create'
 
     resources :books, defaults: { format: :json } do
       #   resources :book

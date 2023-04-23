@@ -5,9 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jwt'
 gem 'mysql2', '~> 0.5'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
@@ -25,6 +27,7 @@ group :development do
 end
 
 group :test do
+  gem 'byebug'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'faker'

@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :book do
     title { Faker::Lorem.word }
     author { Faker::Lorem.word }
-    # author { Faker::Number.number(10) }
+    user_id { 1 }
   end
 end

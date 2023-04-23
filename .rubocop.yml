@@ -18,3 +18,7 @@ Style/HashEachMethods:
 
 Style/HashTransformKeys:
   Enabled: true
+
+Metrics/BlockLength:
+   Exclude:
+    - spec/**/*.rb
