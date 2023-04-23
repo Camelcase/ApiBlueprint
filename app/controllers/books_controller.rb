@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  include Response
-
   before_action :set_book, only: %i[show update destroy]
 
   def index = json_response(Book.all)

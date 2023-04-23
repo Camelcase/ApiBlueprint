@@ -81,9 +81,6 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     date (3.3.3)
-    debug (1.7.2)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
     factory_bot (6.2.1)
@@ -100,9 +97,6 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.6.0)
-    irb (1.6.4)
-      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -172,8 +166,6 @@ GEM
     rake (13.0.6)
     redis (4.8.1)
     regexp_parser (2.8.0)
-    reline (0.3.3)
-      io-console (~> 0.5)
     rexml (3.2.5)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
@@ -246,7 +238,6 @@ DEPENDENCIES
   bootsnap
   byebug
   database_cleaner
-  debug
   factory_bot_rails
   faker
   importmap-rails

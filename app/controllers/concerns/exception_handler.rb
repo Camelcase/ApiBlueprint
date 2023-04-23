@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ExceptionHandler
   # provides the more graceful `included` method
   extend ActiveSupport::Concern
@@ -11,3 +13,4 @@ module ExceptionHandler
       json_response({ message: e.message }, :unprocessable_entity)
     end
   end
+end

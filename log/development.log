@@ -574,3 +574,31 @@ Processing by BooksController#index as JSON
 Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 2037)
 
 
+Started GET "/books" for 127.0.0.1 at 2023-04-23 12:58:18 +0200
+Processing by BooksController#index as JSON
+  Parameters: {"book"=>{}}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 3140)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-23 12:59:08 +0200
+Processing by BooksController#create as JSON
+  Parameters: {"title"=>"the Hitchhikers Guide to the Galaxy", "author"=>"Douglas Adams", "book"=>{"title"=>"the Hitchhikers Guide to the Galaxy", "author"=>"Douglas Adams"}}
+[31mUnpermitted parameters: :format, :book. Context: { controller: BooksController, action: create, request: #<ActionDispatch::Request:0x00007fe5dc9b0db0>, params: {"title"=>"the Hitchhikers Guide to the Galaxy", "author"=>"Douglas Adams", "format"=>:json, "controller"=>"books", "action"=>"create", "book"=>{"title"=>"the Hitchhikers Guide to the Galaxy", "author"=>"Douglas Adams"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:10:in `create'
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`) VALUES ('the Hitchhikers Guide to the Galaxy', 'Douglas Adams', '2023-04-23 10:59:08.218285', '2023-04-23 10:59:08.218285')[0m
+  ↳ app/controllers/books_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:10:in `create'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 14.7ms | Allocations: 2452)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-23 12:59:34 +0200
+Processing by BooksController#index as JSON
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1813)
+
+
