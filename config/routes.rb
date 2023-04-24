@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiVersion.new('v1', true) do
       resources :books, defaults: { format: :json } do
       end
+      resources :bookstores, defaults: { format: :json }
     end
     scope module: :v2, constraints: ApiVersion.new('v2', false) do
       resources :books, only: :index
