@@ -70,7 +70,7 @@ RSpec.describe 'Books', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/books', params: { title: 'Foobar' }.to_json, headers:  }
+      before { post '/books', params: { title: 'Foobar' }.to_json, headers: }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
