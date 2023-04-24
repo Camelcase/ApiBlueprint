@@ -25,6 +25,5 @@ module V1
     def book_store_params = params.permit(:name, :location)
 
     def set_book_store = @book_store = Bookstore.find(params[:id])
-
   end
 end
