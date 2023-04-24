@@ -36041,3 +36041,803 @@ Processing by UsersController#create as HTML
 Completed 422 Unprocessable Entity in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 2125)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mBook Delete All (0.3ms)[0m  [1m[31mDELETE FROM `books`[0m
+  [1m[36mBookstore Delete All (0.5ms)[0m  [1m[31mDELETE FROM `bookstores`[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'ApiTest_test'[0m
+  [1m[35m (62.3ms)[0m  [1m[35mTRUNCATE TABLE `books`[0m
+  [1m[35m (72.0ms)[0m  [1m[35mTRUNCATE TABLE `bookstore_books`[0m
+  [1m[35m (51.5ms)[0m  [1m[35mTRUNCATE TABLE `bookstores`[0m
+  [1m[35m (52.1ms)[0m  [1m[35mTRUNCATE TABLE `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Jamar Oberbrunner', 'foo@bar.com', '$2a$04$A17AkQH7BDZtykl5xi.Pf.uJkHiHgVYjoMwL0WJ7wZZ89veZ.n/06', '2023-04-24 09:36:16.110806', '2023-04-24 09:36:16.110806')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Gail Mitchell', 'foo@bar.com', '$2a$04$2W6MUtTtxQgRV9GJkjhbcufIST.KxQLqIGe7LxTQO.gQ9AVFww3XG', '2023-04-24 09:36:16.135329', '2023-04-24 09:36:16.135329')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Lyndon Macejkovic', 'foo@bar.com', '$2a$04$GqiFxf1fDEN3SHpRruYbxu.iUIOPpjY82TTub2Hi5EOBMhQUwcRPm', '2023-04-24 09:36:16.150236', '2023-04-24 09:36:16.150236')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Jamey Daniel', 'foo@bar.com', '$2a$04$NZiius.WlvWSg2/n8luJd..awkGobSWJ26cUdBD/RX0RigYwgnlJO', '2023-04-24 09:36:16.161558', '2023-04-24 09:36:16.161558')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Britt Lueilwitz JD', 'foo@bar.com', '$2a$04$Svzx2uesIhDb1Y4nQFYJMOqKEVq5OCvbB5UeN2glWrscBthzfwAOq', '2023-04-24 09:36:16.173621', '2023-04-24 09:36:16.173621')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Antone Greenfelder', 'foo@bar.com', '$2a$04$KnW1J4391R4BNntb7aZnBeJMvl0yOljrjwBHyT7/jp1bbW.9H48J6', '2023-04-24 09:36:16.240614', '2023-04-24 09:36:16.240614')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/auth/login" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"foo@bar.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007ff12745cb38>, params: {"email"=>"foo@bar.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]"}} }[0m
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007ff12745cb38>, params: {"email"=>"foo@bar.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"foo@bar.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1584)
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Ellis Stamm', 'foo@bar.com', '$2a$04$RhkgdzldAiejSVfU3yoTd.gx0jvDG4x39GHqto/J9Y03qEl9HpyP6', '2023-04-24 09:36:16.271286', '2023-04-24 09:36:16.271286')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/auth/login" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"cliff.jacobson@rippin.test", "password"=>"[FILTERED]", "authentication"=>{"email"=>"cliff.jacobson@rippin.test", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007ff127338ab8>, params: {"email"=>"cliff.jacobson@rippin.test", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"cliff.jacobson@rippin.test", "password"=>"[FILTERED]"}} }[0m
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007ff127338ab8>, params: {"email"=>"cliff.jacobson@rippin.test", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"cliff.jacobson@rippin.test", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'cliff.jacobson@rippin.test' LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 479)
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Louie Windler', 'foo@bar.com', '$2a$04$ZrymQUHiH1gjMRVMWzkdhuLGPyFYyGSwIS0oC3FmHzBFSeJtJl9my', '2023-04-24 09:36:16.283359', '2023-04-24 09:36:16.283359')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('minus', 'nulla', '2023-04-24 09:36:16.285465', '2023-04-24 09:36:16.285465', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('et', 'debitis', '2023-04-24 09:36:16.287976', '2023-04-24 09:36:16.287976', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('at', 'non', '2023-04-24 09:36:16.289977', '2023-04-24 09:36:16.289977', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('maxime', 'consequatur', '2023-04-24 09:36:16.291724', '2023-04-24 09:36:16.291724', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('aut', 'qui', '2023-04-24 09:36:16.293745', '2023-04-24 09:36:16.293745', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('et', 'dolorem', '2023-04-24 09:36:16.295454', '2023-04-24 09:36:16.295454', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('tenetur', 'dolor', '2023-04-24 09:36:16.297192', '2023-04-24 09:36:16.297192', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('explicabo', 'qui', '2023-04-24 09:36:16.298889', '2023-04-24 09:36:16.298889', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('dolorum', 'ullam', '2023-04-24 09:36:16.300390', '2023-04-24 09:36:16.300390', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('voluptatem', 'facere', '2023-04-24 09:36:16.302070', '2023-04-24 09:36:16.302070', 8)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/books" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#index as JSON
+  Parameters: {"book"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 8 LIMIT 1[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 8[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.97ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.8ms | Allocations: 4685)
+  [1m[36mTRANSACTION (22.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Clair Mosciski Jr.', 'foo@bar.com', '$2a$04$tguS70NSgrMzQzs/kOieBeJm2XD35rzx3cIsWdTdsQPFiv0RxoC4u', '2023-04-24 09:36:16.340852', '2023-04-24 09:36:16.340852')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('iusto', 'corporis', '2023-04-24 09:36:16.342829', '2023-04-24 09:36:16.342829', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('a', 'quisquam', '2023-04-24 09:36:16.344408', '2023-04-24 09:36:16.344408', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('doloribus', 'harum', '2023-04-24 09:36:16.346243', '2023-04-24 09:36:16.346243', 9)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('veritatis', 'fuga', '2023-04-24 09:36:16.347800', '2023-04-24 09:36:16.347800', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ipsum', 'cumque', '2023-04-24 09:36:16.349336', '2023-04-24 09:36:16.349336', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('suscipit', 'sint', '2023-04-24 09:36:16.351340', '2023-04-24 09:36:16.351340', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('doloremque', 'in', '2023-04-24 09:36:16.353058', '2023-04-24 09:36:16.353058', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('sed', 'deleniti', '2023-04-24 09:36:16.354625', '2023-04-24 09:36:16.354625', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('accusantium', 'et', '2023-04-24 09:36:16.356447', '2023-04-24 09:36:16.356447', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('nostrum', 'vitae', '2023-04-24 09:36:16.358326', '2023-04-24 09:36:16.358326', 9)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/books" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#index as JSON
+  Parameters: {"book"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 9 LIMIT 1[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 9[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.53ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.0ms | Allocations: 2064)
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Malinda Pacocha', 'foo@bar.com', '$2a$04$NHsytYSxHmbrxhu4P9a6RuYaTQ.nDqCOf8adbVBrnAMv4HjS3iW4S', '2023-04-24 09:36:16.380526', '2023-04-24 09:36:16.380526')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quas', 'eveniet', '2023-04-24 09:36:16.384435', '2023-04-24 09:36:16.384435', 10)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('nulla', 'doloremque', '2023-04-24 09:36:16.387797', '2023-04-24 09:36:16.387797', 10)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('laborum', 'iste', '2023-04-24 09:36:16.389692', '2023-04-24 09:36:16.389692', 10)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('dicta', 'vel', '2023-04-24 09:36:16.391812', '2023-04-24 09:36:16.391812', 10)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('consequatur', 'explicabo', '2023-04-24 09:36:16.394810', '2023-04-24 09:36:16.394810', 10)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ut', 'veniam', '2023-04-24 09:36:16.397501', '2023-04-24 09:36:16.397501', 10)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('soluta', 'iusto', '2023-04-24 09:36:16.399960', '2023-04-24 09:36:16.399960', 10)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('officiis', 'itaque', '2023-04-24 09:36:16.402624', '2023-04-24 09:36:16.402624', 10)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('reprehenderit', 'laboriosam', '2023-04-24 09:36:16.405580', '2023-04-24 09:36:16.405580', 10)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('consequatur', 'vero', '2023-04-24 09:36:16.408471', '2023-04-24 09:36:16.408471', 10)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/books/21" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#show as JSON
+  Parameters: {"id"=>"21", "book"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 10 AND `books`.`id` = 21 LIMIT 1[0m
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.1ms | Allocations: 979)
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Rep. Broderick Goldner', 'foo@bar.com', '$2a$04$FAF6NaqFCxWApIND4qy2aOiSm.J.awX4.Lj5EiLVg/M8GYW5xKICC', '2023-04-24 09:36:16.432630', '2023-04-24 09:36:16.432630')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('maiores', 'et', '2023-04-24 09:36:16.436013', '2023-04-24 09:36:16.436013', 11)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('doloremque', 'vel', '2023-04-24 09:36:16.439282', '2023-04-24 09:36:16.439282', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('nihil', 'quaerat', '2023-04-24 09:36:16.441384', '2023-04-24 09:36:16.441384', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('excepturi', 'excepturi', '2023-04-24 09:36:16.443339', '2023-04-24 09:36:16.443339', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('et', 'rem', '2023-04-24 09:36:16.444946', '2023-04-24 09:36:16.444946', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('sit', 'et', '2023-04-24 09:36:16.446344', '2023-04-24 09:36:16.446344', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('aut', 'sed', '2023-04-24 09:36:16.447938', '2023-04-24 09:36:16.447938', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('impedit', 'inventore', '2023-04-24 09:36:16.449591', '2023-04-24 09:36:16.449591', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ad', 'praesentium', '2023-04-24 09:36:16.452030', '2023-04-24 09:36:16.452030', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('rerum', 'quo', '2023-04-24 09:36:16.454160', '2023-04-24 09:36:16.454160', 11)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/books/31" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#show as JSON
+  Parameters: {"id"=>"31", "book"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 11 LIMIT 1[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 11 AND `books`.`id` = 31 LIMIT 1[0m
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.0ms | Allocations: 930)
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Evalyn Walter', 'foo@bar.com', '$2a$04$YZm03bxFIhmbBRTk663MduAKOcf4KNssfc8V80h7TGQw58if1yLdW', '2023-04-24 09:36:16.479708', '2023-04-24 09:36:16.479708')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('rerum', 'modi', '2023-04-24 09:36:16.483455', '2023-04-24 09:36:16.483455', 12)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('dolore', 'voluptatem', '2023-04-24 09:36:16.486842', '2023-04-24 09:36:16.486842', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('dolores', 'est', '2023-04-24 09:36:16.488722', '2023-04-24 09:36:16.488722', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quod', 'in', '2023-04-24 09:36:16.490532', '2023-04-24 09:36:16.490532', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('rerum', 'eum', '2023-04-24 09:36:16.492321', '2023-04-24 09:36:16.492321', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('corporis', 'est', '2023-04-24 09:36:16.493972', '2023-04-24 09:36:16.493972', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('dignissimos', 'expedita', '2023-04-24 09:36:16.495709', '2023-04-24 09:36:16.495709', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('dicta', 'non', '2023-04-24 09:36:16.497351', '2023-04-24 09:36:16.497351', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('amet', 'et', '2023-04-24 09:36:16.499297', '2023-04-24 09:36:16.499297', 12)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('reiciendis', 'ea', '2023-04-24 09:36:16.502596', '2023-04-24 09:36:16.502596', 12)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/books/100" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#show as JSON
+  Parameters: {"id"=>"100", "book"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 12 LIMIT 1[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 12 AND `books`.`id` = 100 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 4ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 999)
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Tillie Yost', 'foo@bar.com', '$2a$04$q1g8DqLdCr5OIwRPgZhpu.0Dfb9fzqAEVuCLR7.t1u4C8RSn0G87.', '2023-04-24 09:36:16.523961', '2023-04-24 09:36:16.523961')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('aut', 'ullam', '2023-04-24 09:36:16.528059', '2023-04-24 09:36:16.528059', 13)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('praesentium', 'ut', '2023-04-24 09:36:16.530843', '2023-04-24 09:36:16.530843', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quam', 'porro', '2023-04-24 09:36:16.532924', '2023-04-24 09:36:16.532924', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('voluptatibus', 'labore', '2023-04-24 09:36:16.534963', '2023-04-24 09:36:16.534963', 13)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('illum', 'cum', '2023-04-24 09:36:16.537860', '2023-04-24 09:36:16.537860', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('sunt', 'et', '2023-04-24 09:36:16.539882', '2023-04-24 09:36:16.539882', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('qui', 'similique', '2023-04-24 09:36:16.541508', '2023-04-24 09:36:16.541508', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('reiciendis', 'quia', '2023-04-24 09:36:16.542994', '2023-04-24 09:36:16.542994', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('sunt', 'aliquam', '2023-04-24 09:36:16.544381', '2023-04-24 09:36:16.544381', 13)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('perspiciatis', 'illum', '2023-04-24 09:36:16.545909', '2023-04-24 09:36:16.545909', 13)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/books/100" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#show as JSON
+  Parameters: {"id"=>"100", "book"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 13 AND `books`.`id` = 100 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 4ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 855)
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Maragaret Kilback', 'foo@bar.com', '$2a$04$CoG7E8oWlMyddWBNNtBeee8W/asGKUfsTsTkqsEZ9cEjBAejPICqy', '2023-04-24 09:36:16.568364', '2023-04-24 09:36:16.568364')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('est', 'sit', '2023-04-24 09:36:16.571749', '2023-04-24 09:36:16.571749', 14)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('aperiam', 'autem', '2023-04-24 09:36:16.574771', '2023-04-24 09:36:16.574771', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quod', 'quidem', '2023-04-24 09:36:16.577064', '2023-04-24 09:36:16.577064', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quas', 'hic', '2023-04-24 09:36:16.578795', '2023-04-24 09:36:16.578795', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ut', 'ut', '2023-04-24 09:36:16.580486', '2023-04-24 09:36:16.580486', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ipsam', 'cum', '2023-04-24 09:36:16.582141', '2023-04-24 09:36:16.582141', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('eos', 'eligendi', '2023-04-24 09:36:16.583773', '2023-04-24 09:36:16.583773', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ullam', 'eius', '2023-04-24 09:36:16.585146', '2023-04-24 09:36:16.585146', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('debitis', 'in', '2023-04-24 09:36:16.586594', '2023-04-24 09:36:16.586594', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('fugit', 'sed', '2023-04-24 09:36:16.588280', '2023-04-24 09:36:16.588280', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/books" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Learn Elm", "author"=>"somedude", "book"=>{"title"=>"Learn Elm", "author"=>"somedude"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007ff125efa6a0>, params: {"title"=>"Learn Elm", "author"=>"somedude", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Learn Elm", "author"=>"somedude"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('Learn Elm', 'somedude', '2023-04-24 09:36:16.592867', '2023-04-24 09:36:16.592867', 14)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 1341)
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Jefferson Hintz MD', 'foo@bar.com', '$2a$04$NEh5e3KrhZefypDIjpN7L.SjAShi7F9XfxpmtpmNelLI22aeo6PsK', '2023-04-24 09:36:16.604995', '2023-04-24 09:36:16.604995')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('nostrum', 'et', '2023-04-24 09:36:16.608809', '2023-04-24 09:36:16.608809', 15)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('numquam', 'deleniti', '2023-04-24 09:36:16.612375', '2023-04-24 09:36:16.612375', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('harum', 'tenetur', '2023-04-24 09:36:16.614193', '2023-04-24 09:36:16.614193', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('omnis', 'ut', '2023-04-24 09:36:16.615788', '2023-04-24 09:36:16.615788', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('minima', 'ut', '2023-04-24 09:36:16.617187', '2023-04-24 09:36:16.617187', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('impedit', 'accusantium', '2023-04-24 09:36:16.618597', '2023-04-24 09:36:16.618597', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quidem', 'atque', '2023-04-24 09:36:16.620582', '2023-04-24 09:36:16.620582', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('esse', 'sequi', '2023-04-24 09:36:16.622949', '2023-04-24 09:36:16.622949', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('sequi', 'voluptate', '2023-04-24 09:36:16.624752', '2023-04-24 09:36:16.624752', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('corporis', 'qui', '2023-04-24 09:36:16.626584', '2023-04-24 09:36:16.626584', 15)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/books" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Learn Elm", "author"=>"somedude", "book"=>{"title"=>"Learn Elm", "author"=>"somedude"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 15 LIMIT 1[0m
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007ff1276d7408>, params: {"title"=>"Learn Elm", "author"=>"somedude", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Learn Elm", "author"=>"somedude"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('Learn Elm', 'somedude', '2023-04-24 09:36:16.654053', '2023-04-24 09:36:16.654053', 15)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 1240)
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Rhett Bahringer', 'foo@bar.com', '$2a$04$KLvtQgZs4o1XaNG/pvbsW.s/9JQrBNeJGDOqNoPask8oUaBW8.8c6', '2023-04-24 09:36:16.663863', '2023-04-24 09:36:16.663863')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('et', 'hic', '2023-04-24 09:36:16.666193', '2023-04-24 09:36:16.666193', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('necessitatibus', 'deleniti', '2023-04-24 09:36:16.667987', '2023-04-24 09:36:16.667987', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('id', 'nulla', '2023-04-24 09:36:16.669625', '2023-04-24 09:36:16.669625', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('architecto', 'optio', '2023-04-24 09:36:16.671079', '2023-04-24 09:36:16.671079', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quae', 'quibusdam', '2023-04-24 09:36:16.672684', '2023-04-24 09:36:16.672684', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('optio', 'qui', '2023-04-24 09:36:16.674192', '2023-04-24 09:36:16.674192', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('commodi', 'ipsa', '2023-04-24 09:36:16.675952', '2023-04-24 09:36:16.675952', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('expedita', 'nam', '2023-04-24 09:36:16.677586', '2023-04-24 09:36:16.677586', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('veritatis', 'est', '2023-04-24 09:36:16.679445', '2023-04-24 09:36:16.679445', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('earum', 'vero', '2023-04-24 09:36:16.681295', '2023-04-24 09:36:16.681295', 16)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/books" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Foobar", "book"=>{"title"=>"Foobar"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 16 LIMIT 1[0m
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007ff12763a8d8>, params: {"title"=>"Foobar", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Foobar"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1484)
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Coy O\'Connell', 'foo@bar.com', '$2a$04$i.A/E8tJmf9caTfxFfsyiOhwsVgwkbL4aap4/547.79zloA7KST0S', '2023-04-24 09:36:16.694709', '2023-04-24 09:36:16.694709')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('cupiditate', 'officia', '2023-04-24 09:36:16.697095', '2023-04-24 09:36:16.697095', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('velit', 'quia', '2023-04-24 09:36:16.698980', '2023-04-24 09:36:16.698980', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('consectetur', 'quibusdam', '2023-04-24 09:36:16.700611', '2023-04-24 09:36:16.700611', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('debitis', 'repellendus', '2023-04-24 09:36:16.702480', '2023-04-24 09:36:16.702480', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('iste', 'voluptas', '2023-04-24 09:36:16.704492', '2023-04-24 09:36:16.704492', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('esse', 'alias', '2023-04-24 09:36:16.706077', '2023-04-24 09:36:16.706077', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('distinctio', 'et', '2023-04-24 09:36:16.707892', '2023-04-24 09:36:16.707892', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('omnis', 'dolores', '2023-04-24 09:36:16.709467', '2023-04-24 09:36:16.709467', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('beatae', 'deserunt', '2023-04-24 09:36:16.711131', '2023-04-24 09:36:16.711131', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('totam', 'asperiores', '2023-04-24 09:36:16.712747', '2023-04-24 09:36:16.712747', 17)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/books" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Foobar", "book"=>{"title"=>"Foobar"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 17 LIMIT 1[0m
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007ff12759fd10>, params: {"title"=>"Foobar", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Foobar"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1421)
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Wilfredo Dickens V', 'foo@bar.com', '$2a$04$nxuyRC0y3x6RKyvMM4Ffge9clBgVsQxIC59joQgFS1vaSCJgxt7gi', '2023-04-24 09:36:16.726009', '2023-04-24 09:36:16.726009')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('voluptatum', 'similique', '2023-04-24 09:36:16.727836', '2023-04-24 09:36:16.727836', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ducimus', 'enim', '2023-04-24 09:36:16.729425', '2023-04-24 09:36:16.729425', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('reiciendis', 'numquam', '2023-04-24 09:36:16.731159', '2023-04-24 09:36:16.731159', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('veniam', 'tenetur', '2023-04-24 09:36:16.732831', '2023-04-24 09:36:16.732831', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('tenetur', 'reprehenderit', '2023-04-24 09:36:16.734647', '2023-04-24 09:36:16.734647', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('rerum', 'excepturi', '2023-04-24 09:36:16.736354', '2023-04-24 09:36:16.736354', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('fugiat', 'neque', '2023-04-24 09:36:16.738071', '2023-04-24 09:36:16.738071', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('blanditiis', 'ad', '2023-04-24 09:36:16.739697', '2023-04-24 09:36:16.739697', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('nostrum', 'vel', '2023-04-24 09:36:16.741406', '2023-04-24 09:36:16.741406', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('perferendis', 'unde', '2023-04-24 09:36:16.743280', '2023-04-24 09:36:16.743280', 18)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started PUT "/books/103" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#update as JSON
+  Parameters: {"title"=>"Shopping", "id"=>"103", "book"=>{"title"=>"Shopping"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 18 LIMIT 1[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 18 AND `books`.`id` = 103 LIMIT 1[0m
+[31mUnpermitted parameters: :format, :id, :book. Context: { controller: V1::BooksController, action: update, request: #<ActionDispatch::Request:0x00007ff127511588>, params: {"title"=>"Shopping", "format"=>:json, "controller"=>"v1/books", "action"=>"update", "id"=>"103", "book"=>{"title"=>"Shopping"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Update (0.4ms)[0m  [1m[33mUPDATE `books` SET `books`.`title` = 'Shopping', `books`.`updated_at` = '2023-04-24 09:36:16.748422' WHERE `books`.`id` = 103[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 204 No Content in 4ms (ActiveRecord: 1.5ms | Allocations: 1269)
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Jestine Mills', 'foo@bar.com', '$2a$04$2JLj0L/yrY5wYKpo/rtRo.bB1oCwWOhh7hOjlq0LaDGfySvCY9sBe', '2023-04-24 09:36:16.758065', '2023-04-24 09:36:16.758065')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('et', 'excepturi', '2023-04-24 09:36:16.759967', '2023-04-24 09:36:16.759967', 19)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('modi', 'et', '2023-04-24 09:36:16.761597', '2023-04-24 09:36:16.761597', 19)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('suscipit', 'temporibus', '2023-04-24 09:36:16.764457', '2023-04-24 09:36:16.764457', 19)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('non', 'voluptatibus', '2023-04-24 09:36:16.767189', '2023-04-24 09:36:16.767189', 19)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('veniam', 'numquam', '2023-04-24 09:36:16.768835', '2023-04-24 09:36:16.768835', 19)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('qui', 'non', '2023-04-24 09:36:16.770323', '2023-04-24 09:36:16.770323', 19)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('nihil', 'magni', '2023-04-24 09:36:16.772354', '2023-04-24 09:36:16.772354', 19)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('necessitatibus', 'magni', '2023-04-24 09:36:16.773921', '2023-04-24 09:36:16.773921', 19)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('ipsum', 'dolor', '2023-04-24 09:36:16.776835', '2023-04-24 09:36:16.776835', 19)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('earum', 'blanditiis', '2023-04-24 09:36:16.779927', '2023-04-24 09:36:16.779927', 19)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started PUT "/books/113" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#update as JSON
+  Parameters: {"title"=>"Shopping", "id"=>"113", "book"=>{"title"=>"Shopping"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 19 LIMIT 1[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 19 AND `books`.`id` = 113 LIMIT 1[0m
+[31mUnpermitted parameters: :format, :id, :book. Context: { controller: V1::BooksController, action: update, request: #<ActionDispatch::Request:0x00007ff127480bc8>, params: {"title"=>"Shopping", "format"=>:json, "controller"=>"v1/books", "action"=>"update", "id"=>"113", "book"=>{"title"=>"Shopping"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE `books` SET `books`.`title` = 'Shopping', `books`.`updated_at` = '2023-04-24 09:36:16.787923' WHERE `books`.`id` = 113[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 204 No Content in 6ms (ActiveRecord: 2.2ms | Allocations: 1097)
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Son Cormier', 'foo@bar.com', '$2a$04$FGeFeLaKred0xK0bIKO/huQubi4iYdrBIITGMx2b02KSRuHNDiD9O', '2023-04-24 09:36:16.801556', '2023-04-24 09:36:16.801556')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('asperiores', 'aut', '2023-04-24 09:36:16.804593', '2023-04-24 09:36:16.804593', 20)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quis', 'voluptatem', '2023-04-24 09:36:16.807166', '2023-04-24 09:36:16.807166', 20)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('velit', 'necessitatibus', '2023-04-24 09:36:16.809704', '2023-04-24 09:36:16.809704', 20)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('sed', 'impedit', '2023-04-24 09:36:16.812731', '2023-04-24 09:36:16.812731', 20)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('eius', 'et', '2023-04-24 09:36:16.815404', '2023-04-24 09:36:16.815404', 20)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('quo', 'aut', '2023-04-24 09:36:16.818040', '2023-04-24 09:36:16.818040', 20)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('cum', 'quae', '2023-04-24 09:36:16.821131', '2023-04-24 09:36:16.821131', 20)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('harum', 'voluptas', '2023-04-24 09:36:16.823943', '2023-04-24 09:36:16.823943', 20)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('consequatur', 'pariatur', '2023-04-24 09:36:16.826197', '2023-04-24 09:36:16.826197', 20)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('incidunt', 'sunt', '2023-04-24 09:36:16.829251', '2023-04-24 09:36:16.829251', 20)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started DELETE "/books/123" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by V1::BooksController#destroy as JSON
+  Parameters: {"id"=>"123", "book"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 20 LIMIT 1[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 20 AND `books`.`id` = 123 LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mBookstoreBook Delete All (1.0ms)[0m  [1m[31mDELETE FROM `bookstore_books` WHERE `bookstore_books`.`book_id` = 123[0m
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM `books` WHERE `books`.`id` = 123[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 204 No Content in 8ms (ActiveRecord: 2.9ms | Allocations: 1327)
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"Danial Boehm", "email"=>"foo@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Danial Boehm", "email"=>"foo@bar.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007ff127336f10>, params: {"name"=>"Danial Boehm", "email"=>"foo@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Danial Boehm", "email"=>"foo@bar.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Danial Boehm', 'foo@bar.com', '$2a$04$nME0vqaLvLuCyonroQHavOw9A4zlzm7sWX3TGO6OO2HjEbae8k.Yu', '2023-04-24 09:36:16.861806', '2023-04-24 09:36:16.861806')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 201 Created in 11ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 1340)
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"Ute Wolff", "email"=>"foo@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Ute Wolff", "email"=>"foo@bar.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007ff12730aed8>, params: {"name"=>"Ute Wolff", "email"=>"foo@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Ute Wolff", "email"=>"foo@bar.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Ute Wolff', 'foo@bar.com', '$2a$04$na2PdPMw4DP7tBurHjDOEOpyMsQ6FZIeMWUlw9ZUsBdrImhtyS83y', '2023-04-24 09:36:16.880597', '2023-04-24 09:36:16.880597')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 201 Created in 8ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 1131)
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"Mitzie Smitham VM", "email"=>"foo@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Mitzie Smitham VM", "email"=>"foo@bar.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007ff12728f5f8>, params: {"name"=>"Mitzie Smitham VM", "email"=>"foo@bar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Mitzie Smitham VM", "email"=>"foo@bar.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `password_digest`, `created_at`, `updated_at`) VALUES ('Mitzie Smitham VM', 'foo@bar.com', '$2a$04$iv.2ePmqnIaO6NaxU2pBbuWyCcxWk0LdWltNV/Nh7Jauen/6lNiJW', '2023-04-24 09:36:16.898155', '2023-04-24 09:36:16.898155')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'foo@bar.com' LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1131)
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007ff127281bd8>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 2180)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Started POST "/signup" for 127.0.0.1 at 2023-04-24 11:36:16 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007ff12724b718>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2125)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m

@@ -23,14 +23,16 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
-  gem 'byebug'
   gem 'web-console'
 end
 
 group :test do
-  gem 'byebug'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'shoulda-matchers'
+end
+
+group :development, :test do
+  gem 'byebug'
 end
