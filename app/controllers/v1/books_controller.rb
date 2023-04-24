@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module V1
   class BooksController < ApplicationController
     before_action :set_book, only: %i[show update destroy]

@@ -10,7 +10,7 @@ RSpec.describe 'Books', type: :request do
 
   describe 'GET /books' do
     # make HTTP get request before each example
-    before { get '/books',  params: {}, headers: }
+    before { get '/books', params: {}, headers: }
 
     it 'returns books' do
       expect(json).not_to be_empty
@@ -23,7 +23,7 @@ RSpec.describe 'Books', type: :request do
   end
 
   describe 'GET /books/:id' do
-    before { get "/books/#{book_id}",  params: {}, headers:  }
+    before { get "/books/#{book_id}", params: {}, headers: }
 
     context 'when the record exists' do
       it 'returns the books' do
@@ -52,10 +52,10 @@ RSpec.describe 'Books', type: :request do
   # Test suite for POST /books
   describe 'POST /books' do
     # valid payload
-    let(:valid_attributes) {
+    let(:valid_attributes) do
       { title: 'Learn Elm',
         author: 'somedude' }.to_json
-    }
+    end
 
     context 'when the request is valid' do
       before { post '/books', params: valid_attributes, headers: }

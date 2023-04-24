@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ControllerSpecHelper
   def token_generator(user_id) = JsonWebToken.encode(user_id:)
 
@@ -9,8 +11,7 @@ module ControllerSpecHelper
   }
 
   def invalid_headers = {
-      'Authorization': nil,
-      'Content-Type': 'application/json'
+    'Authorization': nil,
+    'Content-Type': 'application/json'
   }
-
 end
