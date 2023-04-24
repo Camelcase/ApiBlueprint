@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       resources :books, defaults: { format: :json } do
       end
       resources :bookstores, defaults: { format: :json }
+      post 'bookstores/add_book', defaults: { format: :json }, to: 'bookstores#add_book'
+      post 'bookstores/list_books', defaults: { format: :json }, to: 'bookstores#book_list'
     end
     scope module: :v2, constraints: ApiVersion.new('v2', false) do
       resources :books, only: :index

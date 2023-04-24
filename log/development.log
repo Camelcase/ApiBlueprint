@@ -1103,3 +1103,595 @@ Processing by V1::BookstoresController#index as JSON
 Completed 200 OK in 35ms (Views: 8.7ms | ActiveRecord: 14.2ms | Allocations: 8859)
 
 
+Started GET "/books" for 127.0.0.1 at 2023-04-24 21:47:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 51ms (Views: 11.3ms | ActiveRecord: 14.3ms | Allocations: 17639)
+
+
+Started GET "/bookstores" for 127.0.0.1 at 2023-04-24 21:48:03 +0200
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.9ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 25ms (Views: 11.7ms | ActiveRecord: 6.4ms | Allocations: 5677)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-24 21:48:47 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"The Long Dark Tea-Time of the Soul", "author"=>"Douglas Adams", "book"=>{"title"=>"The Long Dark Tea-Time of the Soul", "author"=>"Douglas Adams"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007fa975436ae0>, params: {"title"=>"The Long Dark Tea-Time of the Soul", "author"=>"Douglas Adams", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"The Long Dark Tea-Time of the Soul", "author"=>"Douglas Adams"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('The Long Dark Tea-Time of the Soul', 'Douglas Adams', '2023-04-24 19:48:47.181378', '2023-04-24 19:48:47.181378', 1)[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 25ms (Views: 2.0ms | ActiveRecord: 8.9ms | Allocations: 4860)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-24 21:50:48 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"The color of magic", "author"=>"Terry Pratchett", "book"=>{"title"=>"The color of magic", "author"=>"Terry Pratchett"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007fa97267f8e0>, params: {"title"=>"The color of magic", "author"=>"Terry Pratchett", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"The color of magic", "author"=>"Terry Pratchett"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('The color of magic', 'Terry Pratchett', '2023-04-24 19:50:48.526986', '2023-04-24 19:50:48.526986', 1)[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 27ms (Views: 1.2ms | ActiveRecord: 14.7ms | Allocations: 3206)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-24 21:50:59 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Soul Music", "author"=>"Terry Pratchett", "book"=>{"title"=>"Soul Music", "author"=>"Terry Pratchett"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007fa972652318>, params: {"title"=>"Soul Music", "author"=>"Terry Pratchett", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Soul Music", "author"=>"Terry Pratchett"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('Soul Music', 'Terry Pratchett', '2023-04-24 19:50:59.311679', '2023-04-24 19:50:59.311679', 1)[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 200 OK in 18ms (Views: 1.6ms | ActiveRecord: 8.2ms | Allocations: 3193)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-24 21:52:35 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Children of Dune", "author"=>"Frank Herbert", "book"=>{"title"=>"Children of Dune", "author"=>"Frank Herbert"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007fa972623590>, params: {"title"=>"Children of Dune", "author"=>"Frank Herbert", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Children of Dune", "author"=>"Frank Herbert"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('Children of Dune', 'Frank Herbert', '2023-04-24 19:52:35.581771', '2023-04-24 19:52:35.581771', 1)[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 30ms (Views: 1.2ms | ActiveRecord: 16.5ms | Allocations: 3196)
+
+
+Started POST "/books" for 127.0.0.1 at 2023-04-24 21:52:43 +0200
+Processing by V1::BooksController#create as JSON
+  Parameters: {"title"=>"Heretics of Dune", "author"=>"Frank Herbert", "book"=>{"title"=>"Heretics of Dune", "author"=>"Frank Herbert"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :book. Context: { controller: V1::BooksController, action: create, request: #<ActionDispatch::Request:0x00007fa9725f6c70>, params: {"title"=>"Heretics of Dune", "author"=>"Frank Herbert", "format"=>:json, "controller"=>"v1/books", "action"=>"create", "book"=>{"title"=>"Heretics of Dune", "author"=>"Frank Herbert"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO `books` (`title`, `author`, `created_at`, `updated_at`, `user_id`) VALUES ('Heretics of Dune', 'Frank Herbert', '2023-04-24 19:52:43.023271', '2023-04-24 19:52:43.023271', 1)[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/books_controller.rb:9:in `create'
+[active_model_serializers] Rendered BookSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 32ms (Views: 1.3ms | ActiveRecord: 18.7ms | Allocations: 3188)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-24 21:52:46 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.49ms)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 1.5ms | Allocations: 2370)
+
+
+Started GET "/bookstores" for 127.0.0.1 at 2023-04-24 21:52:52 +0200
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.7ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.94ms)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.5ms | Allocations: 1697)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:00:41 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"book_id"=>1, "store_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb58c9028>, params: {"book_id"=>1, "store_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 15.8ms | Allocations: 12189)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'store_id' for BookstoreBook.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:01:55 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb1f34470>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mBookstore Load (0.7ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mBookstoreBook Create (3.5ms)[0m  [1m[32mINSERT INTO `bookstore_books` (`book_id`, `bookstore_id`, `created_at`, `updated_at`) VALUES (1, 1, '2023-04-24 20:01:55.488794', '2023-04-24 20:01:55.488794')[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+No template found for V1::BookstoresController#add_book, rendering head :no_content
+Completed 204 No Content in 85ms (ActiveRecord: 30.1ms | Allocations: 20714)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:02:38 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb4700580>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mBookstore Load (0.9ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mBookstoreBook Create (0.8ms)[0m  [1m[32mINSERT INTO `bookstore_books` (`book_id`, `bookstore_id`, `created_at`, `updated_at`) VALUES (1, 1, '2023-04-24 20:02:38.484506', '2023-04-24 20:02:38.484506')[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with BookstoreBook (0.49ms)
+Completed 200 OK in 90ms (Views: 5.5ms | ActiveRecord: 33.6ms | Allocations: 23390)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:03:53 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb2026130>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 9.5ms | Allocations: 9118)
+
+
+  
+NoMethodError (undefined method `update_or_create!' for BookstoreBook:Class
+Did you mean?  update_counters):
+  
+app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:05:18 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb4b310f0>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 9.6ms | Allocations: 9067)
+
+
+  
+NoMethodError (undefined method `upsert!' for BookstoreBook:Class
+Did you mean?  upsert):
+  
+app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:05:43 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb1fb7640>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+  [1m[36mBookstoreBook Upsert (7.5ms)[0m  [1m[32mINSERT INTO `bookstore_books` (`bookstore_id`,`book_id`,`created_at`,`updated_at`) VALUES (1, 1, CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6)) ON DUPLICATE KEY UPDATE updated_at=(CASE WHEN (`bookstore_id`<=>VALUES(`bookstore_id`) AND `book_id`<=>VALUES(`book_id`)) THEN `bookstore_books`.updated_at ELSE CURRENT_TIMESTAMP(6) END),`bookstore_id`=VALUES(`bookstore_id`),`book_id`=VALUES(`book_id`)[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 35ms (Views: 3.4ms | ActiveRecord: 18.9ms | Allocations: 7687)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:06:11 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb1ebbb10>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+  [1m[36mBookstoreBook Upsert (15.8ms)[0m  [1m[32mINSERT INTO `bookstore_books` (`bookstore_id`,`book_id`,`created_at`,`updated_at`) VALUES (1, 1, CURRENT_TIMESTAMP(6), CURRENT_TIMESTAMP(6)) ON DUPLICATE KEY UPDATE updated_at=(CASE WHEN (`bookstore_id`<=>VALUES(`bookstore_id`) AND `book_id`<=>VALUES(`book_id`)) THEN `bookstore_books`.updated_at ELSE CURRENT_TIMESTAMP(6) END),`bookstore_id`=VALUES(`bookstore_id`),`book_id`=VALUES(`book_id`)[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:13:in `add_book'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 23ms (Views: 1.2ms | ActiveRecord: 16.5ms | Allocations: 1539)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:09:03 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb3e47510>, params: {"bookstore_id"=>1, "book_id"=>1, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+  [1m[36mBookstoreBook Load (0.6ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:14:in `add_book'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 30ms (Views: 2.4ms | ActiveRecord: 16.4ms | Allocations: 10775)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:11:42 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 9.7ms | Allocations: 7830)
+
+
+  
+NameError (undefined local variable or method `bookstore_id' for #<V1::BookstoresController:0x0000000002c970>
+
+      return if BookstoreBook.find_by(bookstore_id: , book_id:)
+                                      ^^^^^^^^^^^^^
+Did you mean?  bookstore_url):
+  
+app/controllers/v1/bookstores_controller.rb:14:in `add_book'
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:13:03 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstoreBook Load (0.8ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 1 AND `bookstore_books`.`book_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:14:in `add_book'
+No template found for V1::BookstoresController#add_book, rendering head :no_content
+Completed 204 No Content in 32ms (ActiveRecord: 14.5ms | Allocations: 8326)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:13:24 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstoreBook Load (0.7ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 1 AND `bookstore_books`.`book_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:14:in `add_book'
+No template found for V1::BookstoresController#add_book, rendering head :no_content
+Completed 204 No Content in 7ms (ActiveRecord: 1.3ms | Allocations: 1244)
+
+
+Started POST "/bookstores/add_book" for 127.0.0.1 at 2023-04-24 22:13:31 +0200
+Processing by V1::BookstoresController#add_book as JSON
+  Parameters: {"bookstore_id"=>1, "book_id"=>2, "bookstore"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstoreBook Load (0.9ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 1 AND `bookstore_books`.`book_id` = 2 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:14:in `add_book'
+[31mUnpermitted parameters: :format, :bookstore. Context: { controller: V1::BookstoresController, action: add_book, request: #<ActionDispatch::Request:0x00007f3fb1edbc30>, params: {"bookstore_id"=>1, "book_id"=>2, "format"=>:json, "controller"=>"v1/bookstores", "action"=>"add_book", "bookstore"=>{}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:16:in `add_book'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:16:in `add_book'
+  [1m[36mBookstore Load (0.4ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:16:in `add_book'
+  [1m[36mBookstoreBook Create (1.1ms)[0m  [1m[32mINSERT INTO `bookstore_books` (`book_id`, `bookstore_id`, `created_at`, `updated_at`) VALUES (2, 1, '2023-04-24 20:13:31.611406', '2023-04-24 20:13:31.611406')[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:16:in `add_book'
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:16:in `add_book'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with BookstoreBook (0.46ms)
+Completed 200 OK in 78ms (Views: 28.2ms | ActiveRecord: 23.7ms | Allocations: 17487)
+
+
+Started POST "/bookstores/list_books" for 127.0.0.1 at 2023-04-24 22:18:16 +0200
+  
+SyntaxError (/home/thorsten/projects/ApiBlueprint/app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+    end
+    ^~~
+/home/thorsten/projects/ApiBlueprint/app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/bookstores/list_books" for 127.0.0.1 at 2023-04-24 22:18:24 +0200
+  
+SyntaxError (/home/thorsten/projects/ApiBlueprint/app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+    end
+    ^~~
+/home/thorsten/projects/ApiBlueprint/app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/v1/bookstores_controller.rb:15: syntax error, unexpected `end', expecting ')'
+app/controllers/v1/bookstores_controller.rb:41: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/bookstores/list_books" for 127.0.0.1 at 2023-04-24 22:19:02 +0200
+  
+AbstractController::ActionNotFound (The action 'book_list' could not be found for V1::BookstoresController
+Did you mean?  booklist):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/bookstores/list_books" for 127.0.0.1 at 2023-04-24 22:19:37 +0200
+Processing by V1::BookstoresController#book_list as JSON
+  Parameters: {"bookstore_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstoreBook Load (0.7ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+No serializer found for resource: #<BookstoreBook id: 1, book_id: 1, bookstore_id: 1, created_at: "2023-04-24 20:01:55.488794000 +0000", updated_at: "2023-04-24 20:01:55.488794000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with BookstoreBook::ActiveRecord_Relation (0.51ms)
+Completed 200 OK in 34ms (Views: 9.9ms | ActiveRecord: 15.0ms | Allocations: 14180)
+
+
+Started POST "/bookstores/list_books" for 127.0.0.1 at 2023-04-24 22:21:02 +0200
+Processing by V1::BookstoresController#book_list as JSON
+  Parameters: {"bookstore_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstoreBook Load (0.8ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers]   [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+[active_model_serializers]   ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers]   [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+[active_model_serializers]   ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.76ms)
+Completed 200 OK in 65ms (Views: 35.3ms | ActiveRecord: 21.8ms | Allocations: 14986)
+
+
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:28:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.8ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (9.22ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 13.5ms | Allocations: 18476)
+
+
+  
+NoMethodError (undefined method `Books' for BookstoreBook:Class):
+  
+app/serializers/bookstore_serializer.rb:7:in `books_available'
+app/controllers/concerns/response.rb:4:in `json_response'
+app/controllers/v1/bookstores_controller.rb:11:in `show'
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:29:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.6ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (9.46ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 11.9ms | Allocations: 18476)
+
+
+  
+NoMethodError (undefined method `Book' for BookstoreBook:Class):
+  
+app/serializers/bookstore_serializer.rb:7:in `books_available'
+app/controllers/concerns/response.rb:4:in `json_response'
+app/controllers/v1/bookstores_controller.rb:11:in `show'
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:31:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.8ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (8.02ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 13.6ms | Allocations: 18530)
+
+
+  
+NoMethodError (undefined method `map' for BookstoreBook:Class
+Did you mean?  tap):
+  
+app/serializers/bookstore_serializer.rb:7:in `books_available'
+app/controllers/concerns/response.rb:4:in `json_response'
+app/controllers/v1/bookstores_controller.rb:11:in `show'
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:32:36 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.7ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (5.38ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 12.9ms | Allocations: 9793)
+
+
+  
+NoMethodError (undefined method `BookstoreBook' for #<BookstoreSerializer:0x00007f4f946e2798 @object=#<Bookstore id: 1, name: "Flourish and Blotts", location: "London", created_at: "2023-04-24 19:16:42.603180000 +0000", updated_at: "2023-04-24 19:16:42.603180000 +0000">, @instance_options={:status=>200, :prefixes=>["v1/bookstores", "application"], :template=>"show", :namespace=>V1, :scope=>#<User id: 1, name: "foo", email: "foo@bar.ca", password_digest: [FILTERED], created_at: "2023-04-24 18:42:00.071333000 +0000", updated_at: "2023-04-24 18:42:00.071333000 +0000">, :scope_name=>:current_user}, @root=nil, @scope=#<User id: 1, name: "foo", email: "foo@bar.ca", password_digest: [FILTERED], created_at: "2023-04-24 18:42:00.071333000 +0000", updated_at: "2023-04-24 18:42:00.071333000 +0000">, @attributes=nil>
+
+    self.BookstoreBook.all.map{
+        ^^^^^^^^^^^^^^):
+  
+app/serializers/bookstore_serializer.rb:7:in `books_available'
+app/controllers/concerns/response.rb:4:in `json_response'
+app/controllers/v1/bookstores_controller.rb:11:in `show'
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:36:44 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.9ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (5.25ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 11.4ms | Allocations: 9677)
+
+
+  
+NoMethodError (undefined method `BookstoreBook' for #<BookstoreSerializer:0x00007f4f94848178 @object=#<Bookstore id: 1, name: "Flourish and Blotts", location: "London", created_at: "2023-04-24 19:16:42.603180000 +0000", updated_at: "2023-04-24 19:16:42.603180000 +0000">, @instance_options={:status=>200, :prefixes=>["v1/bookstores", "application"], :template=>"show", :namespace=>V1, :scope=>#<User id: 1, name: "foo", email: "foo@bar.ca", password_digest: [FILTERED], created_at: "2023-04-24 18:42:00.071333000 +0000", updated_at: "2023-04-24 18:42:00.071333000 +0000">, :scope_name=>:current_user}, @root=nil, @scope=#<User id: 1, name: "foo", email: "foo@bar.ca", password_digest: [FILTERED], created_at: "2023-04-24 18:42:00.071333000 +0000", updated_at: "2023-04-24 18:42:00.071333000 +0000">, @attributes=nil>
+
+    self.BookstoreBook.all.map{
+        ^^^^^^^^^^^^^^):
+  
+app/serializers/bookstore_serializer.rb:7:in `books_available'
+app/controllers/concerns/response.rb:4:in `json_response'
+app/controllers/v1/bookstores_controller.rb:11:in `show'
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:37:38 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.6ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 27ms (Views: 2.8ms | ActiveRecord: 10.3ms | Allocations: 7473)
+
+
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:39:12 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.9ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 12.7ms | Allocations: 7824)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0)):
+  
+app/serializers/bookstore_serializer.rb:12:in `attributes'
+app/controllers/concerns/response.rb:4:in `json_response'
+app/controllers/v1/bookstores_controller.rb:11:in `show'
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:40:32 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (1.0ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 27ms (Views: 2.6ms | ActiveRecord: 11.5ms | Allocations: 7482)
+
+
+Started GET "/bookstores/1" for 127.0.0.1 at 2023-04-24 22:40:47 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"1", "bookstore"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.6ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:39:in `set_book_store'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.3ms | Allocations: 1458)
+
+
+Started POST "/bookstores/book_list?bookstore_id=1" for 127.0.0.1 at 2023-04-24 22:41:50 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/bookstores/book_list"):
+  
+Started POST "/bookstores/book_list" for 127.0.0.1 at 2023-04-24 22:42:25 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/bookstores/book_list"):
+  
+Started POST "/bookstores/ist_books" for 127.0.0.1 at 2023-04-24 22:43:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/bookstores/ist_books"):
+  
+Started POST "/bookstores/list_books" for 127.0.0.1 at 2023-04-24 22:43:31 +0200
+Processing by V1::BookstoresController#book_list as JSON
+  Parameters: {"bookstore_id"=>1, "bookstore"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstoreBook Load (1.0ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers]   [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+[active_model_serializers]   ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers]   [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+[active_model_serializers]   ↳ app/controllers/concerns/response.rb:4:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.23ms)
+Completed 200 OK in 69ms (Views: 33.1ms | ActiveRecord: 23.1ms | Allocations: 22903)
+
+

@@ -10,6 +10,16 @@ module V1
 
     def show = json_response(@book_store)
 
+    def book_list
+      json_response(BookstoreBook.where(bookstore_id: params[:bookstore_id]))
+    end
+
+    def add_book
+      return if BookstoreBook.find_by(bookstore_id: params[:bookstore_id], book_id: params[:book_id])
+
+      json_response(BookstoreBook.create!(book_store_books_params))
+    end
+
     def update
       @book_store.update(book_store_params)
       head :no_content
@@ -23,6 +33,8 @@ module V1
     private
 
     def book_store_params = params.permit(:name, :location)
+
+    def book_store_books_params = params.permit(:bookstore_id, :book_id)
 
     def set_book_store = @book_store = Bookstore.find(params[:id])
   end
