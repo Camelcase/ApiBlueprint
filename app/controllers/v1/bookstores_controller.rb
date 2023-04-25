@@ -3,6 +3,7 @@
 module V1
   class BookstoresController < ApplicationController
     before_action :set_book_store, only: %i[show update destroy]
+    skip_before_action :authorize_request, only: :index
 
     def index = json_minimal_response(Bookstore.all)
 

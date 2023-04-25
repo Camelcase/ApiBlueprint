@@ -13993,3 +13993,124 @@ Processing by V1::BooksController#index as JSON
 Completed 200 OK in 110ms (Views: 93.0ms | ActiveRecord: 5.6ms | Allocations: 10042)
 
 
+Started GET "/bookstores/" for 127.0.0.1 at 2023-04-25 11:47:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mBookstore Load (1.0ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:9:in `json_minimal_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 4.8ms | Allocations: 9212)
+
+
+Started GET "/bookstores/" for 127.0.0.1 at 2023-04-25 11:47:13 +0200
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mBookstore Load (0.6ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:9:in `json_minimal_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 1406)
+
+
+Started GET "/bookstores/2" for 127.0.0.1 at 2023-04-25 11:47:23 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"2"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 4273)
+
+
+Started GET "/bookstores/2" for 127.0.0.1 at 2023-04-25 11:47:26 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.4ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:38:in `set_book_store'
+[active_model_serializers]   [1m[36mBookstoreBook Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:11:in `books_available'
+[active_model_serializers]   [1m[36mBookstoreBook Load (0.5ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:13:in `map'
+[active_model_serializers]   [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 4 LIMIT 1[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:15:in `block in books_available'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (29.75ms)
+Completed 200 OK in 129ms (Views: 21.5ms | ActiveRecord: 13.8ms | Allocations: 21716)
+
+
+Started GET "/bookstores/" for 127.0.0.1 at 2023-04-25 11:47:30 +0200
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mBookstore Load (0.5ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:9:in `json_minimal_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 1301)
+
+
+Started GET "/bookstores/2" for 127.0.0.1 at 2023-04-25 11:48:02 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"2"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 4308)
+
+
+Started GET "/bookstores/2" for 127.0.0.1 at 2023-04-25 11:48:07 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.7ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:38:in `set_book_store'
+[active_model_serializers]   [1m[36mBookstoreBook Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:11:in `books_available'
+[active_model_serializers]   [1m[36mBookstoreBook Load (0.7ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:13:in `map'
+[active_model_serializers]   [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 4 LIMIT 1[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:15:in `block in books_available'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (33.52ms)
+Completed 200 OK in 65ms (Views: 25.7ms | ActiveRecord: 20.4ms | Allocations: 19322)
+
+
+Started GET "/bookstores/2" for 127.0.0.1 at 2023-04-25 11:48:38 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mBookstore Load (0.4ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:38:in `set_book_store'
+[active_model_serializers]   [1m[36mBookstoreBook Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:11:in `books_available'
+[active_model_serializers]   [1m[36mBookstoreBook Load (0.5ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:13:in `map'
+[active_model_serializers]   [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 4 LIMIT 1[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:15:in `block in books_available'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (19.88ms)
+Completed 200 OK in 31ms (Views: 12.8ms | ActiveRecord: 13.0ms | Allocations: 15455)
+
+
+Started GET "/bookstores/" for 127.0.0.1 at 2023-04-25 11:48:45 +0200
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mBookstore Load (0.4ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:9:in `json_minimal_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 4.6ms | Allocations: 4943)
+
+
+Started GET "/bookstores/2" for 127.0.0.1 at 2023-04-25 11:48:55 +0200
+Processing by V1::BookstoresController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBookstore Load (0.6ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores` WHERE `bookstores`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/v1/bookstores_controller.rb:38:in `set_book_store'
+[active_model_serializers]   [1m[36mBookstoreBook Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:11:in `books_available'
+[active_model_serializers]   [1m[36mBookstoreBook Load (0.7ms)[0m  [1m[34mSELECT `bookstore_books`.* FROM `bookstore_books` WHERE `bookstore_books`.`bookstore_id` = 2[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:13:in `map'
+[active_model_serializers]   [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`id` = 4 LIMIT 1[0m
+[active_model_serializers]   ↳ app/serializers/bookstore_serializer.rb:15:in `block in books_available'
+[active_model_serializers] Rendered BookstoreSerializer with ActiveModelSerializers::Adapter::Attributes (34.72ms)
+Completed 200 OK in 55ms (Views: 26.0ms | ActiveRecord: 14.9ms | Allocations: 16136)
+
+
+Started GET "/bookstores/" for 127.0.0.1 at 2023-04-25 11:49:00 +0200
+Processing by V1::BookstoresController#index as JSON
+  [1m[36mBookstore Load (0.4ms)[0m  [1m[34mSELECT `bookstores`.* FROM `bookstores`[0m
+  ↳ app/controllers/concerns/response.rb:9:in `json_minimal_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 1289)
+
+
