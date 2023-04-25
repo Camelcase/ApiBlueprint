@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require 'test_helper'
 require 'database_cleaner'
+require 'webmock/rspec'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
