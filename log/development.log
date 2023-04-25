@@ -13716,3 +13716,280 @@ Processing by V1::BookstoresController#index as JSON
 Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 2042)
 
 
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:37:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.87ms)
+Completed 200 OK in 29ms (Views: 7.1ms | ActiveRecord: 6.8ms | Allocations: 18293)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:38:26 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.0ms | Allocations: 2622)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:39:05 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 2353)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:41:55 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 22ms (Views: 3.9ms | ActiveRecord: 9.9ms | Allocations: 10184)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:42:58 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+Completed 200 OK in 35ms (Views: 5.0ms | ActiveRecord: 8.6ms | Allocations: 10220)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:43:31 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 42ms (Views: 8.2ms | ActiveRecord: 6.2ms | Allocations: 12042)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:46:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.67ms)
+Completed 200 OK in 46ms (Views: 13.3ms | ActiveRecord: 8.6ms | Allocations: 18269)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:47:31 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.62ms)
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 1.9ms | Allocations: 2656)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:48:35 +0200
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 11ms (Views: 2.0ms | ActiveRecord: 2.9ms | Allocations: 8170)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:48:42 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 5.2ms | Allocations: 6597)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:48:51 +0200
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 878)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:48:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+Started GET "/books" for 127.0.0.1 at 2023-04-25 10:59:09 +0200
+  
+SyntaxError (/home/thorsten/projects/ApiBlueprint/app/lib/api_version.rb:21: unknown regexp options - vd
+    regex= /application/vnd.books.(..)+json/
+                       ^~~~
+/home/thorsten/projects/ApiBlueprint/app/lib/api_version.rb:21: syntax error, unexpected ')'
+...ex= /application/vnd.books.(..)+json/
+...                              ^
+):
+  
+app/lib/api_version.rb:21: unknown regexp options - vd
+app/lib/api_version.rb:21: syntax error, unexpected ')'
+app/lib/api_version.rb:21: unknown regexp options - vd
+app/lib/api_version.rb:21: syntax error, unexpected ')'
+app/lib/api_version.rb:21: unknown regexp options - vd
+app/lib/api_version.rb:21: syntax error, unexpected ')'
+config/routes.rb:10:in `block (2 levels) in <main>'
+config/routes.rb:6:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:00:05 +0200
+  
+SyntaxError (/home/thorsten/projects/ApiBlueprint/app/lib/api_version.rb:21: unknown regexp options - vd
+    regex= /application/vnd.books.()+json/
+                       ^~~~
+):
+  
+app/lib/api_version.rb:21: unknown regexp options - vd
+app/lib/api_version.rb:21: unknown regexp options - vd
+app/lib/api_version.rb:21: unknown regexp options - vd
+config/routes.rb:10:in `block (2 levels) in <main>'
+config/routes.rb:6:in `block in <main>'
+config/routes.rb:3:in `<main>'
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:00:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:02:05 +0200
+Processing by V2::BooksController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 18ms (Views: 2.5ms | Allocations: 5796)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:05:22 +0200
+Processing by V2::BooksController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 1.0ms | Allocations: 3992)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:05:28 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.6ms)
+Completed 200 OK in 25ms (Views: 9.1ms | ActiveRecord: 1.7ms | Allocations: 9686)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:05:36 +0200
+Processing by V1::BooksController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 3694)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:06:00 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.46ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.1ms | Allocations: 2503)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:06:05 +0200
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 760)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:06:12 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 2341)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:08:18 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.54ms)
+Completed 200 OK in 25ms (Views: 6.9ms | ActiveRecord: 9.2ms | Allocations: 10179)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:08:21 +0200
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.6ms | Allocations: 4310)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:10:59 +0200
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 11ms (Views: 1.6ms | ActiveRecord: 3.5ms | Allocations: 7963)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:11:02 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.51ms)
+Completed 200 OK in 26ms (Views: 11.4ms | ActiveRecord: 5.7ms | Allocations: 6536)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:11:07 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.84ms)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 1.3ms | Allocations: 2535)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:11:14 +0200
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 754)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:13:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V2::BooksController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 18ms (Views: 2.0ms | ActiveRecord: 5.1ms | Allocations: 12856)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 11:13:07 +0200
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT `books`.* FROM `books` WHERE `books`.`user_id` = 1[0m
+  ↳ app/controllers/concerns/response.rb:5:in `json_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.23ms)
+Completed 200 OK in 110ms (Views: 93.0ms | ActiveRecord: 5.6ms | Allocations: 10042)
+
+

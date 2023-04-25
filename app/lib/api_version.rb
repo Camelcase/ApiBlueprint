@@ -8,10 +8,20 @@ class ApiVersion
     @default = default
   end
 
-  # check whether version is specified or is default
-  def matches?(request) = check_headers(request.headers) || default
+  def matches?(request) = check_headers(request.headers)
 
   private
 
-  def check_headers(headers) = headers&.[](:accept).to_s.include?("application/vnd.todos.#{version}+json")
+  # check whether version is specified or is default
+  def check_headers(headers)
+    accept = headers[:accept]
+    regex = %r{application/vnd\.books\.(..)\+json}
+
+    return true if default && !accept
+
+    m = regex.match(accept)
+    return true if m.nil? && default
+
+    m[1] == version
+  end
 end
