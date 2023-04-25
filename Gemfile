@@ -7,8 +7,6 @@ ruby '3.1.2'
 
 gem 'active_model_serializers'
 gem 'bcrypt'
-gem 'vcr'
-gem 'webmock'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
@@ -23,6 +21,8 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'vcr'
+gem 'webmock'
 
 group :development do
   gem 'web-console'

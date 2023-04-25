@@ -3,23 +3,25 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies', type: :request do
-  describe 'GET /movies' do
-    let (:query) { 'Star Wars' }
-    #let(:sample_data) { JSON.parse(File.read('spec/support/movie_api_result_sample.json')) }
-    # make HTTP get request before each example
+  let(:query) { 'Star Wars' }
+  let(:cassette_name) { 'Starwars' }
 
+  describe 'GET /movies successfully' do
+    before do
+      VCR.turn_on!
+      VCR.use_cassette(cassette_name, { record: :new_episodes }) do
+        get '/movies', params: { query: }, headers:
+      end
+    end
 
-    before {
-      WebMock.stub_request(:get, "https://api.themoviedb.org/3/search/movie?query='#{query}'&language=en-US")
-            .to_return(:status => 200, :body => File.read('spec/support/movie_api_result_sample.json'))
-
-      get '/movies', params: { query: }, headers:
-    }
-
-    it 'returns star wars movies' do
+    it 'works and returns star wars movies' do
       expect(json).not_to be_empty
-      expect(json['movies'][0]).to eq({"title"=>"Doraemon: Nobita's Little Star Wars 2021", "poster_image"=>"/48gKZioIDeUOI0afbYv3kh9u9RQ.jpg"})
-      #expect(json).not_to be_empty
+      expect(json['movies'][0]).to eq({ 'title' => "Doraemon: Nobita's Little Star Wars 2021",
+                                        'poster_image' => '/48gKZioIDeUOI0afbYv3kh9u9RQ.jpg' })
+    end
+
+    it 'returns 20 Movies' do
+      expect(json['movies'].size).to eq(20)
     end
 
     it 'returns status code 200' do
@@ -27,4 +29,21 @@ RSpec.describe 'Movies', type: :request do
     end
   end
 
+  describe 'GET /movies with problems' do
+    before do
+      VCR.turn_off!
+      stub_request(:get, %r{https://api.themoviedb.org(.)+}).to_return(status: 400)
+
+      get '/movies', params: { query: }, headers:
+    end
+
+    it 'movie api fails and returns api error' do
+      expect(json).not_to be_empty
+      expect(json['status']).to eq('API Error')
+    end
+
+    it 'returns status code 400' do
+      expect(response).to have_http_status(:bad_request)
+    end
+  end
 end
