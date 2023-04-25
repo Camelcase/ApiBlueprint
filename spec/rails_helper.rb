@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+#require 'test_helper'
 require 'database_cleaner'
 
 ENV['RAILS_ENV'] ||= 'test'

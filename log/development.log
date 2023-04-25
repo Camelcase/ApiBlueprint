@@ -14114,3 +14114,195 @@ Processing by V1::BookstoresController#index as JSON
 Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 1289)
 
 
+Started GET "/books" for 127.0.0.1 at 2023-04-25 14:55:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+No template found for V1::BooksController#index, rendering head :no_content
+Completed 204 No Content in 97538ms (ActiveRecord: 8.4ms | Allocations: 70686)
+
+
+Started GET "/books" for 127.0.0.1 at 2023-04-25 14:56:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::BooksController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/auth/authorize_api_request.rb:16:in `user'
+No template found for V1::BooksController#index, rendering head :no_content
+Completed 204 No Content in 105053ms (ActiveRecord: 4.2ms | Allocations: 69647)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:19:43 +0200
+Processing by V1::MoviesController#index as JSON
+No template found for V1::MoviesController#index, rendering head :no_content
+Completed 204 No Content in 0ms (Allocations: 253)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:20:01 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 3ms (Views: 2.8ms | Allocations: 3996)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:24:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::MoviesController#index as JSON
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2745)
+
+
+  
+NoMethodError (undefined method `get' for #<V1::MoviesController:0x0000000000bc20>
+
+     movie_data = get "https://api.themoviedb.org/3/movie/76341?api_key=#{api_key}"
+                  ^^^
+Did you mean?  gets
+               gem):
+  
+app/controllers/v1/movies_controller.rb:10:in `index'
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:25:55 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 215989ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 55360)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:29:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 195207ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 53198)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:32:56 +0200
+Processing by V1::MoviesController#index as JSON
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.0ms | Allocations: 2852)
+
+
+  
+NoMethodError (undefined method `to_h' for "{\"success\":false,\"status_code\":34,\"status_message\":\"The resource you requested could not be found.\"}":String
+
+     data = res.body.to_h
+                    ^^^^^
+Did you mean?  to_c
+               to_r
+               to_f
+               to_i
+               to_s
+               to_d):
+  
+app/controllers/v1/movies_controller.rb:16:in `index'
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:33:30 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 55563ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 13910)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:34:31 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 19927ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 14663)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:35:04 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 2776ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 14564)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:35:12 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 65022ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 12549)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-04-25 15:36:20 +0200
+Processing by V1::MoviesController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.18ms)
+Completed 200 OK in 43ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 6962)
+
+
+Started GET "/movies?query=Star%20Wars" for 127.0.0.1 at 2023-04-25 16:09:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Star Wars"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.81ms)
+Completed 200 OK in 17790ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 57481)
+
+
+Started GET "/movies?query=Harry%20Potter" for 127.0.0.1 at 2023-04-25 16:10:04 +0200
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Harry Potter"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.34ms)
+Completed 200 OK in 177ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 6844)
+
+
+Started GET "/movies?query=Harry%20Potter" for 127.0.0.1 at 2023-04-25 16:11:56 +0200
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Harry Potter"}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms | Allocations: 2409)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+      movie_arr[:movies][:results].map{ map_movie(_1) }
+                        ^^^^^^^^^^):
+  
+app/controllers/v1/movies_controller.rb:23:in `map_movies'
+app/controllers/v1/movies_controller.rb:19:in `index'
+Started GET "/movies?query=Harry%20Potter" for 127.0.0.1 at 2023-04-25 16:12:21 +0200
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Harry Potter"}
+Completed 500 Internal Server Error in 49593ms (ActiveRecord: 0.0ms | Allocations: 23100)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+      movie_arr[:movies][:results].map{ map_movie(_1) }
+                        ^^^^^^^^^^):
+  
+app/controllers/v1/movies_controller.rb:24:in `map_movies'
+app/controllers/v1/movies_controller.rb:19:in `index'
+Started GET "/movies?query=Harry%20Potter" for 127.0.0.1 at 2023-04-25 16:13:36 +0200
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Harry Potter"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 61ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 5002)
+
+
+Started GET "/movies?query=Harry%20Potter" for 127.0.0.1 at 2023-04-25 16:15:25 +0200
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Harry Potter"}
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms | Allocations: 4140)
+
+
+  
+NameError (undefined local variable or method `move' for #<V1::MoviesController:0x00000000023730>
+
+        "poster_image": move["poster_path"]
+                        ^^^^
+Did you mean?  movie):
+  
+app/controllers/v1/movies_controller.rb:27:in `map_movie'
+app/controllers/v1/movies_controller.rb:22:in `block in map_movies'
+app/controllers/v1/movies_controller.rb:22:in `map'
+app/controllers/v1/movies_controller.rb:22:in `map_movies'
+app/controllers/v1/movies_controller.rb:19:in `index'
+Started GET "/movies?query=Harry%20Potter" for 127.0.0.1 at 2023-04-25 16:22:42 +0200
+Processing by V1::MoviesController#index as JSON
+  Parameters: {"query"=>"Harry Potter"}
+Completed 500 Internal Server Error in 61ms (Allocations: 4125)
+
+
+  
+NameError (undefined local variable or method `move' for #<V1::MoviesController:0x00000000028528>
+
+        "poster_image": move["poster_path"]
+                        ^^^^
+Did you mean?  movie):
+  
+app/controllers/v1/movies_controller.rb:27:in `map_movie'
+app/controllers/v1/movies_controller.rb:10:in `block in map_movies'
+app/controllers/v1/movies_controller.rb:10:in `map'
+app/controllers/v1/movies_controller.rb:10:in `map_movies'
+app/controllers/v1/movies_controller.rb:21:in `index'

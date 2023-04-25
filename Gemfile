@@ -7,6 +7,8 @@ ruby '3.1.2'
 
 gem 'active_model_serializers'
 gem 'bcrypt'
+gem 'vcr'
+gem 'webmock'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'

@@ -4,7 +4,9 @@ module V1
   class BooksController < ApplicationController
     before_action :set_book, only: %i[show update destroy]
 
-    def index = json_response(current_user.books.all)
+    def index
+      json_response(current_user.books.all)
+    end
 
     def create = json_response(current_user.books.create!(book_params))
 
