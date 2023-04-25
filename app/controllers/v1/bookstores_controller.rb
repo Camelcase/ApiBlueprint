@@ -4,15 +4,13 @@ module V1
   class BookstoresController < ApplicationController
     before_action :set_book_store, only: %i[show update destroy]
 
-    def index = json_response(Bookstore.all)
+    def index = json_minimal_response(Bookstore.all)
 
     def create = json_response(Bookstore.create!(book_store_params))
 
     def show = json_response(@book_store)
 
-    def book_list
-      json_response(BookstoreBook.where(bookstore_id: params[:bookstore_id]))
-    end
+    def book_list = json_response(BookstoreBook.where(bookstore_id: params[:bookstore_id]))
 
     def add_book
       return if BookstoreBook.find_by(bookstore_id: params[:bookstore_id], book_id: params[:book_id])
