@@ -4,29 +4,10 @@ module V1
   class MoviesController < ApplicationController
     skip_before_action :authorize_request
 
-    require 'uri'
-    require 'net/http'
-
-    def map_movies(movie_arr) = movie_arr['results'].map { map_movie(_1) }
-
     def index
-      api_key = 'a99cc60fc2b34dbb18cb806b8a88ed14'
-      uri = URI("https://api.themoviedb.org/3/search/movie?query='#{params[:query]}'&language=en-US&page=1&include_adult=false&api_key=#{api_key}")
-
-      begin
-        res = Net::HTTP.get_response(uri)
-        data = JSON.parse(res.body)
-        render json: { "movies": map_movies(data) }
-      rescue StandardError
-        render json: { "status": 'API Error' }, status: :bad_request
-      end
+      json_interactor_response(Movies::UseCase::GetMovies.call(query: movie_params[:query]))
     end
 
-    def map_movie(movie)
-      {
-        "title": movie['title'],
-        "poster_image": movie['poster_path']
-      }
-    end
+    def movie_params = params.permit(:query)
   end
 end

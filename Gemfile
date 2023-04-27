@@ -9,6 +9,7 @@ gem 'active_model_serializers'
 gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
+gem 'interaktor'
 gem 'jbuilder'
 gem 'jwt'
 gem 'mysql2', '~> 0.5'

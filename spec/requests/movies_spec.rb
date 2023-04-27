@@ -39,7 +39,7 @@ RSpec.describe 'Movies', type: :request do
 
     it 'movie api fails and returns api error' do
       expect(json).not_to be_empty
-      expect(json['status']).to eq('API Error')
+      expect(json['status']).to eq('Movie API Error')
     end
 
     it 'returns status code 400' do
