@@ -3,10 +3,8 @@
 module V1
   class CalculatorController < ApplicationController
     skip_before_action :authorize_request
-    # before_action: expression_params
 
     def index
-      # json_response({ status: :ok })
       json_response({ expression: expression_params[:expression],
                       result: parse_expression(expression_params[:expression]) })
     end
