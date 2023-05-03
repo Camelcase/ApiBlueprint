@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post 'bookstores/add_book', defaults: { format: :json }, to: 'bookstores#add_book'
       post 'bookstores/list_books', defaults: { format: :json }, to: 'bookstores#book_list'
       get 'movies', defaults: { format: :json }, to: 'movies#index'
+      get 'calculator', defaults: { format: :json }, to: 'calculator#index'
     end
 
     scope module: :v2, constraints: ApiVersion.new('v2', false) do
